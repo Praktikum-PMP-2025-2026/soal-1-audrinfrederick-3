@@ -50,8 +50,9 @@ int size = 0;
         for (int j = 0; j < n - i - 1; j++) {
             if (strcmp(arr[j].kategori, arr[j + 1].kategori) > 0 ||
                 (strcmp(arr[j].kategori, arr[j + 1].kategori) == 0 && arr[j].tahun > arr[j + 1].tahun) ||
-                (strcmp(arr[j].kategori, arr[j + 1].kategori) == 0 && arr[j].tahun == arr[j + 1].tahun && arr[j].nilai < arr[j + 1].nilai)) {
-                Arsip temp = arr[j];
+                (strcmp(arr[j].kategori, arr[j + 1].kategori) == 0 && arr[j].tahun == arr[j + 1].tahun && arr[j].nilai < arr[j + 1].nilai)|| 
+                (strcmp(arr[j].kategori, arr[j + 1].kategori) == 0 && arr[j].tahun == arr[j + 1].tahun && arr[j].nilai == arr[j + 1].nilai && strcmp(arr[j].nama, arr[j + 1].nama) > 0)) {
+                Arsip temp = arr[j];    
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
